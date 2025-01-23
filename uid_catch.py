@@ -3,7 +3,7 @@ from mitmproxy import http
 from mitmproxy import ctx
 import requests
 
-local = "110.41.16.153"
+local = "127.0.0.1"
 
 # 过滤指定的URL并输出Cookie
 def request(flow: http.HTTPFlow) -> None:
