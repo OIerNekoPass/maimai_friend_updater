@@ -1,9 +1,9 @@
 import pymysql
 
-host = "localhost"
-user = "root"
-password = "Neko1019."
-database = "Mai_Data"
+host = "localhost"      # 数据库地址
+user = "root"           # 数据库用户名
+password = "password"   # 数据库密码
+database = "Mai_Data"   # 数据库名
 
 def init():
     try:
@@ -98,9 +98,6 @@ def get_sys_var(vname):
         print("查询失败：", e)
         return "err"
 
-def close():
-    connection.close()
-
 def update_song(sid, sname, isNew, level, ds, mtype):
     try: 
         cursor = connection.cursor()
@@ -121,3 +118,6 @@ def update_song(sid, sname, isNew, level, ds, mtype):
     except pymysql.MySQLError as e:
         print("插入失败：", e)
         return False
+
+def close():
+    connection.close()
